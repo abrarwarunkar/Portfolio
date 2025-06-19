@@ -1299,3 +1299,41 @@ a:hover {
     background: linear-gradient(45deg, rgba(100, 255, 218, 0.1), transparent);
     pointer-events: none;
 }
+.hero-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.hero-social-links a {
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: rgba(100, 255, 218, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    font-size: 2rem;
+    transition: var(--transition);
+}
+
+.hero-social-links a:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+    .hero-social-links {
+        margin-top: 1.5rem;
+    }
+    
+    .hero-social-links a {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.8rem;
+    }
+}
