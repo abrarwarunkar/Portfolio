@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Abrar Warunkar - Full Stack Developer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <!-- Add Particle.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
+    <!-- Particle.js Container -->
+    <div id="particles-js"></div>
+    
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
     
@@ -356,15 +361,25 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="code-tag">&lt;</span>AW<span class="code-tag">/&gt;</span>
+                <div class="footer-logo"><span class="code-tag">&lt;</span>AW<span class="code-tag">/&gt;</span></div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-social">
-                    <a href="https://github.com/abrarwarunkar" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/abrar-warunkar" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:warunkarabrar@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/abrarwarunkar" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abrar-warunkar/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            
                 </div>
-                <p>&copy; 2025 Abrar Warunkar. All rights reserved.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Abrar Warunkar. All rights reserved.</p>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </div>
     </footer>
@@ -452,7 +467,7 @@
 
         // Typing animation
         const typed = new Typed('.typing', {
-            strings: ['Full Stack Developer', 'Problem Solver','Ai-Ml Enthusiast', 'Tech Enthusiast'],
+            strings: ['Full Stack Developer', 'Problem Solver','AI & ML Enthusiast', 'Tech Enthusiast'],
             typeSpeed: 100,
             backSpeed: 60,
             loop: true
@@ -488,6 +503,11 @@
                     input.parentElement.classList.remove('focused');
                 }
             });
+        });
+
+        // Initialize particles.js
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('particles.js loaded - callback');
         });
     </script>
 </body>
